@@ -64,5 +64,6 @@ while x == 0:
         break
 print('Loopen kördes',count,'gånger.')'''
 
-while (print(random.randrange(0,100) != 20)):
-    print()
+while (print(random.randrange(0,100) != 20)): print()
+
+print('hej')
