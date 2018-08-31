@@ -79,13 +79,53 @@ print('-----------------------')
 print('Exponentielll beräkning')
 print('-----------------------')
 for x in range(10,-1,-1):
-    print(x,'^',x, '=', x**x) '''
+    print(x,'^',x, '=', x**x) 
 
 def exponentialCount():
     print('-----------------------')
     print('Exponentielll beräkning')
     print('-----------------------')
-    for x in range(10,0,-1):
+    for x in range(10,-1,-1):
         print(x,'^',x, '=', x**x)
 
 exponentialCount()
+
+
+
+for r in range(0, 4):
+    print()
+    print('-----------')
+    print('|', end="")
+    for k in range(0, 4):
+        print(r**4, end="|")
+print('\n-----------')
+
+
+r = 0
+k = 1
+while r <= 3 :
+    print()
+    r += 1
+    k = k == 0
+    while k <=3:
+       k += 1
+       print('*', end="")
+
+
+x = 10
+y = 20
+z = x
+x = y
+y = z
+print('x var 10 men är nu',"\n",x)
+print('y var 20 men är nu',"\n",y)
+
+x = 10
+y = 20
+x,y = y,x
+print('x är',x)
+print('y är',y)
+'''
+
+print('Mata in ditt namn: ')
+print('Hej', sys.stdin.readline())

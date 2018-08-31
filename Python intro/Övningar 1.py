@@ -89,6 +89,10 @@ print(c)
 
 a = "Emil"
 b = "Jacobsson"
-a = a + b
-b = a + b
-a = b - a
+c = a
+a = b
+b = c
+print(a,b)
+
+a,b = b,a
+print(a,b)
