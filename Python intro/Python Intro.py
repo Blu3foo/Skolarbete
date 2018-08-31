@@ -2,7 +2,8 @@ import random
 import sys
 import os
 
-'''x = 30
+'''
+x = 30
 if x == 30:
     print('Du har 30!')
 
@@ -62,8 +63,29 @@ while x == 0:
     print(r)
     if r == 20:
         break
-print('Loopen kördes',count,'gånger.')'''
+print('Loopen kördes',count,'gånger.')
+largest = None
+print('Before', largest)
+for itevar in [ 3, 41, 12, 9, 74, 15]:
+    if largest is None or itevar > largest :
+        largest = itevar
+    print('loop', itevar, largest, ',', end = " ")
+print('Largest', largest, ',', end = " ")
 
-while (print(random.randrange(0,100) != 20)): print()
+while (random.randrange(0,100) != 15):
+    print(end = " ") 
 
-print('hej')
+print('-----------------------')
+print('Exponentielll beräkning')
+print('-----------------------')
+for x in range(10,-1,-1):
+    print(x,'^',x, '=', x**x) '''
+
+def exponentialCount():
+    print('-----------------------')
+    print('Exponentielll beräkning')
+    print('-----------------------')
+    for x in range(10,0,-1):
+        print(x,'^',x, '=', x**x)
+
+exponentialCount()
