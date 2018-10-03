@@ -53,7 +53,7 @@ print(c)
 
 # Övning 3.2
 
-a = (5>1)
+a = (5 > 1)
 print(type(a))
 
 
@@ -61,10 +61,50 @@ print(type(a))
 
 a = 10
 b = 20
+bool_a = (a <=100 and b >= a)
+print(bool_a)
 if(a <= 100 and b >= a):
     print(a,'är mindre än 100',b, 'är större än', a)
     print(type(a and b))
 
+
+#Övning 5.2
+a = 100
+b = 200
+bool_var = (a > b)
+if bool_var == False:
+    print(bool_var)
+
+
+# Övning 6.2
+
+counter = 0
+while counter < 10:
+    counter += 1
+    print(counter)
+
+# Övning 7.2
+
+a = 0
+while True:
+    print('Hej')
+
+
+# Övning 8.2
+
+a = 0
+b = 10
+for int in range(a,b):
+    if a < b:
+        a += 1
+        print(a)
+
+a = 0
+b = 10
+while (a < b):
+    a += 1
+    print(a)
 '''
 
+# Övning 9.2
 
