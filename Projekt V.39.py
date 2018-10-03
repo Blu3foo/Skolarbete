@@ -53,10 +53,14 @@ while running:
 
                                         # Texten som man vill ha encrypted eller decrypted
                                         message = str(input('What is your message?\n>>> '))
-
-                                        # val av nyckel
-                                        key = int(input('Choose encryption/decryption key(Remember Your key)\n>>> '))
-                                        strkey = str(key)
+                                        while True:
+                                            try:
+                                                # val av nyckel
+                                                key = int(input('Choose encryption/decryption key(Remember Your key)\n>>> '))
+                                                strkey = str(key)
+                                                break
+                                            except:
+                                                print('Invalid input. Please enter a number')
 
                                         # Alla symboler som går att  använda sig av
                                         SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.'
