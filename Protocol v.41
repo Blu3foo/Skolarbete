@@ -22,11 +22,11 @@ Network
 Data Link
 Physical
 
-TCP och OSI skills åt genom hur de är uppbyggda men behandlar data överföring på samma sätt, med transport- och nätverks-lager och använder sig båda av packet-switching.
+TCP och OSI skills åt genom hur de är uppbyggda men behandlar dataöverföring på samma sätt, med transport- och nätverks-lager och använder sig båda av packet-switching.
 
 Det lagren symboliserar är:
 Application - Visning, kodning och dialog.
-Host-toHost - Data uppdelning, överföringssäkerhet och flow/error kontroll.
+Host-toHost - Datauppdelning, överföringssäkerhet och flow/error kontroll.
 Internet - Kartlägga paketets rutt från källa till destination, oberoende av path.
 Network Access - Hanterar de fysiska aspekterna av att länka samman dataöverföring för både WAN och LAN.
 
