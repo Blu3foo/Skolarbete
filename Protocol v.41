@@ -1,0 +1,64 @@
+Protocol v.41
+TCP/ IP och OSI
+(Transmission Control Protocol/ Internet Protocol)
+
+TCP är utvecklat av USAs försvars departement
+TCP och OSI består av 4, respektive 7, lager.
+
+TCP/ IP
+4 lager
+Application
+Host-to-Host
+Internet
+Network access
+
+OSI
+7 lager
+Application
+Presentation
+Session
+Transport
+Network
+Data Link
+Physical
+
+TCP och OSI skills åt genom hur de är uppbyggda men behandlar dataöverföring på samma sätt, med transport- och nätverks-lager och använder sig båda av packet-switching.
+
+Det lagren symboliserar är:
+Application - Visning, kodning och dialog.
+Host-toHost - Datauppdelning, överföringssäkerhet och flow/error kontroll.
+Internet - Kartlägga paketets rutt från källa till destination, oberoende av path.
+Network Access - Hanterar de fysiska aspekterna av att länka samman dataöverföring för både WAN och LAN.
+
+
+TCP och UDP är så kallade Host-to-Host protokoll som definieras av att de båda skickar datagrams .
+
+
+Transmission Control Protocol (TCP)
+
+Innan överföring fastställer slutpunkterna en koppling.
+Data enheterna kallas för “segments”
+Varje segment består av en header och en payload. En header består av 20 byte. 
+I TCP bryts dataströmmen ner i segment och tas sedan emot vid slutpunkten. Där organiseras de i rätt ordning för att återbyggas och skicka om eventuella segment som kan ha förlorats.
+Segment storleken är begränsad av MTU (Maximum Transfer Unit), som ofta ligger på 1500 byte då det är maximala payload storleken för ethernet.
+
+TCP går alltså från en Source port till en Destination port för att fastställa uppkopplingen.
+Sedan segmenteras dataströmmen med Sequence Number och Acknowledgment Number
+TCP-header längden  indikerar hur många 4 byte ord som headern innehåller.
+I ett windowfält anges hur många byte som kan skickas innan man får ett svar. (EG 16 byte)
+Checksum används för att förstärka pålitligheten och säkerheten i TCP-segmentet.
+
+User Data Protocol (UDP)
+
+UDP har färre lager än TCP och förlitar sig istället på applikations-lagret.
+I UDP så är hastigheten av överföringen det som är viktigt.
+UDP består därför bara av
+Source port
+Destination port
+Length
+Checksum
+Data
+
+Så TCP används när man vill säkert överföra segmenterad data och behålla data integritet.
+UDP används istället när man vill ha så hög överföring och så hög optimering som möjligt. 
+
