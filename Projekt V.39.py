@@ -55,8 +55,9 @@ while running:
                                         message = str(input('What is your message?\n>>> '))
                                         while True:
                                             try:
-                                                # val av nyckel
+                                                # Val av nyckel
                                                 key = int(input('Choose encryption/decryption key(Remember Your key)\n>>> '))
+                                                # Gör om key till str för att kunna lägga till i txt filen
                                                 strkey = str(key)
                                                 break
                                             except:
@@ -67,7 +68,7 @@ while running:
 
                                         # Lagra medelandet
                                         translated = ''
-
+                                        # En for loop för att gå igenom SYMBOLS
                                         for symbol in message:
                                             if symbol in SYMBOLS:
                                                 symbolIndex = SYMBOLS.find(symbol)
@@ -103,7 +104,7 @@ while running:
                                                     nameFile = input('Name your file\n>>> ')  # Namnge din fil
                                                     with open(nameFile + '.txt', 'w') as f:
                                                         # Skriver ner key och meddelande till fil
-                                                        f.write('Key: ' + strkey + '\nMessage: ' + message)
+                                                        f.write('Key: ' + strkey + '\nMessage: ' + message + '\nCrypted message: ' + translated)
                                                         f.close()
                                                         break
                                                 elif savemessage == 'n':
