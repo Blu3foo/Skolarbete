@@ -1,9 +1,15 @@
 from tkinter import *
 from tkinter import filedialog
 import tkinter.messagebox
+import time
+from threading import Thread
 root = Tk()
 root.minsize(900, 600)
 root.maxsize(1000, 900)
+
+
+global count
+count = 0
 
 
 def donothing():
@@ -11,13 +17,16 @@ def donothing():
 
 
 def newfile():
+    global count
     answer = tkinter.messagebox.askquestion('Create new file', 'Would you like to save the current file?')
     if answer == 'yes':
         saveasfile()
     elif answer == 'no':
         pass
+    text.delete(1.0, END)
+    text.insert(INSERT, 'Get to writing!')
+    count = 0
 
-    text.delete('1.0', END)
 
 
 # Funktion för att öppna existerande textfile
@@ -75,6 +84,27 @@ def Tfont():
         Hvar.set(0)
         text.config(font='consolas')
 
+
+def writingorelse():
+    while True:
+        writing = text.get(1.0, END)
+        time.sleep(1)
+        writing2 = text.get(1.0, END)
+        if writing != writing2:
+            status.config(text='Writing...')
+        else:
+            status.config(text='Waiting...')
+
+
+def deltext(event):
+    global count
+    if count == 0:
+        text.delete(1.0, END)
+        count += 1
+    else:
+        pass
+
+
 # Variabler för fontval
 Hvar = IntVar()
 Tvar = IntVar()
@@ -95,7 +125,7 @@ filemenu.add_separator()
 filemenu.add_command(label='Exit', command=root.quit)
 menubar.add_cascade(label='File', menu=filemenu)
 editmenu = Menu(menubar, tearoff=0)
-editmenu.add_command(label='Undo')
+editmenu.add_command(label='Undo', command=donothing)
 
 editmenu.add_separator()
 
@@ -105,11 +135,11 @@ editmenu.add_command(label='Paste', command=donothing)
 
 
 menubar.add_cascade(label='Edit', menu=editmenu)
-status = Label(root, text='Status...', bd=1, relief=RAISED, anchor=W, bg='grey')
+status = Label(root, text='Waiting...', bd=1, relief=RAISED, anchor=W, bg='grey')
 status.pack(side=BOTTOM, fill=X)
 
 text = Text(root, bg='antique white', height=400, font='consolas')
-text.insert(INSERT, 'WRITE WHAT EVER YOU WANT!')
+text.insert(INSERT, 'Get to writing!')
 text.pack(fill=X)
 
 # Checkbuttons för fontval
@@ -121,4 +151,9 @@ helvb = Checkbutton(status, text='Helvetica', variable=Hvar, onvalue=1, offvalue
 tnrb.pack(side=RIGHT)
 helvb.pack(side=RIGHT)
 root.config(menu=menubar)
+hej = Thread(target=writingorelse, daemon=True)
+hej.start()
+text.bind('<Button-1>', deltext)
+
 root.mainloop()
+
